@@ -7,25 +7,46 @@ create table syntax:
         ...
     );
 */
+CREATE TABLE MyTeam(
+                          Emp_ID Integer Primary Key,
+                          FirstName varchar(30) not null,
+                          LastName varchar(30),
+                          JobTitle varchar(20)
 
-create table ScrumTeam(
-    Emp_Id INTEGER PRIMARY KEY,
-    FirstName varchar(30) not null,
-    LastName varchar(30),
-    JobTitle varchar(20)
 );
 
-select * from SCRUMTEAM;
+select * from MYTEAM;
 
 /*
 INSERT INTO tableName (column1, column2,...)
 VALUES (value1, value2 ... );
 */
-insert into SCRUMTEAM(emp_id, firstname, lastname, jobtitle)
-values (1, 'Severus','Snape','Tester');
+INSERT INTO MYTEAM(emp_id,firstname,lastname,jobtitle)
+VALUES (1,'Severus','Snape','Tester');
+INSERT INTO MYTEAM VALUES (2,'Harold','Finch','Developer');
+INSERT INTO MYTEAM VALUES (3,'Phoebe','Buffay','ScrumMaster');
+INSERT INTO MYTEAM VALUES (4,'Michael','Scofield','PO');
 
-insert into SCRUMTEAM values (2, 'Harold', 'Finch', 'Developer');
 
-insert into SCRUMTEAM values (3, 'Phoebe', 'Finch', 'ScrumMaster');
+--how to update data
+/*
+UPDATE table_name
+SET column1 = value1,
+column2 = value2 , ...
+WHERE condition;
+*/
+UPDATE MYTEAM
+SET jobtitle = 'Tester'
+WHERE emp_id = 4;
 
-insert into SCRUMTEAM values (4, 'Michael', 'Scofield', 'PO');
+
+--Delete from table
+/*
+DELETE FROM table_name
+WHERE condition;
+*/
+delete from MYTEAM
+where EMP_ID = 3;
+
+commit;
+
